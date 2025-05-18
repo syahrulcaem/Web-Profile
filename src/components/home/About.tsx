@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { FiUser, FiMail } from 'react-icons/fi';
-import { FiCode, FiShield } from 'react-icons/fi';
+
 
 const About: React.FC = () => {
   return (

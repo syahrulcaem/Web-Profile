@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Button from '../common/Button';
+
 
 export interface Project {
   id: string;
