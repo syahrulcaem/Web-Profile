@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "IGNITOR - Educational Game Launcher",
     description: "A modern desktop application for managing and playing educational games. IGNITOR provides an elegant and user-friendly interface, designed to facilitate access to various educational games.",
     image: "/images/projects/ignitor.jpeg",
-    link: "https://github.com/codewithwan/ignitor-electron",
+    link: "https://ignitor.codewithwan.tech/",
     tags: ["Electron", "React", "JavaScript", "Desktop App", "Education"]
   },
   {

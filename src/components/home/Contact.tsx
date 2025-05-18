@@ -201,28 +201,21 @@ const Contact: React.FC = () => {
                 I'm always open to discussing new projects, opportunities, or partnerships.
               </p>
               
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <FaEnvelope className="text-blue-500 mr-3" />
-                  <a 
-                    href="mailto:syahrulromadhonmuhammad@gmail.com" 
-                    className="text-gray-700 hover:text-blue-500 transition-colors"
-                  >
-                    syahrulromadhonmuhammad@gmail.com
-                  </a>
-                </div>
-                
-                <div className="flex items-center">
-                  <FaLinkedin className="text-blue-500 mr-3" />
-                  <a 
-                    href="https://www.linkedin.com/in/m-syahrul-romadhon-73238128a/" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="text-gray-700 hover:text-blue-500 transition-colors"
-                  >
-                    linkedin.com/in/m-syahrul-romadhon
-                  </a>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
+                <a 
+                  href="mailto:syahrulromadhonmuhammad@gmail.com" 
+                  className="text-gray-700 hover:text-blue-500 transition-colors break-all"
+                >
+                  syahrulromadhonmuhammad@gmail.com
+                </a>
+                <span className="hidden sm:inline text-gray-400">|</span>
+                <a href="https://www.linkedin.com/in/m-syahrul-romadhon-73238128a/" className="text-gray-700 hover:text-blue-500">
+                  LinkedIn
+                </a>
+                <span className="hidden sm:inline text-gray-400">|</span>
+                <a href="https://github.com/syahrulcaem" className="text-gray-700 hover:text-blue-500">
+                  GitHub
+                </a>
               </div>
             </div>
             
