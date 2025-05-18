@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "selin-backend",
     title: "Polines Attendance System (SELIN)",
     description: "A mobile application for face recognition-based attendance at Semarang State Polytechnic. Built with Laravel for the backend and Flutter for the mobile app, this system enhances security and efficiency of student attendance processes.",
-    image: "/src/assets/images/selin.jpeg",
+    image: "/public/assets/images/selin.jpeg",
     link: "https://github.com/syahrulcaem/selin-backend",
     tags: ["Laravel", "MySQL", "Flutter", "Face Recognition", "Mobile App"]
   },
@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: "aplikasi-ujian-online",
     title: "Online Exam Monitoring System",
     description: "An online examination platform with integrated monitoring features. This application makes it easier for exam organizers to monitor the examination process in real-time, manage question banks, and analyze exam results.",
-    image: "/src/assets/images/Monitoring.png",
+    image: "/public/assets/images/Monitoring.png",
     link: "https://github.com/syahrulcaem/aplikasi-ujian-online",
     tags: ["Laravel", "React", "TypeScript", "MySQL", "REST API"]
   },
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     id: "ignitor-electron",
     title: "IGNITOR - Educational Game Launcher",
     description: "A modern desktop application for managing and playing educational games. IGNITOR provides an elegant and user-friendly interface, designed to facilitate access to various educational games.",
-    image: "/src/assets/images/ignitor.jpeg",
+    image: "/public/assets/images/ignitor.jpeg",
     link: "https://github.com/codewithwan/ignitor-electron",
     tags: ["Electron", "React", "JavaScript", "Desktop App", "Education"]
   },
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     id: "hajifund",
     title: "HajiFund - Hajj Alumni Mobile App",
     description: "A mobile application for the Hajj pilgrimage alumni community that facilitates fund management, communication between members, and activity management. Built with Laravel for the backend and Flutter for the mobile application.",
-    image: "/src/assets/images/hajifund.png",
+    image: "/public/assets/images/hajifund.png",
     link: "https://github.com/syahrulcaem/hajifund",
     tags: ["Laravel", "Flutter", "MySQL", "Mobile App", "Community Platform"]
   }
