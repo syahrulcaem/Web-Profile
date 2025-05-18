@@ -20,7 +20,7 @@ const About: React.FC = () => {
             className="relative rounded-xl overflow-hidden aspect-square max-w-md mx-auto md:mx-0"
           >
             <img
-              src="/public/assets/images/syahrul1.jpeg"
+              src="/images/syahrul1.jpeg"
               alt="Syahrul Romadhon"
               className="object-cover w-full h-full"
               onError={(e) => {
