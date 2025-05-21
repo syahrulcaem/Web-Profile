@@ -1,12 +1,12 @@
 import type { Skill } from '../components/home/SkillItem';
 import { 
-  FaReact, FaAngular, FaVuejs, FaJs, FaHtml5, FaCss3Alt, 
+  FaReact,  FaJs, FaHtml5, FaCss3Alt, 
   FaNodeJs, FaPhp, FaPython, FaDocker, FaLaravel, FaShieldAlt, 
   FaBug, FaLock, FaFlag, FaTools
 } from 'react-icons/fa';
 import { 
   SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb,
-  SiPostgresql, SiMysql, SiFirebase, SiCodeigniter
+  SiPostgresql, SiMysql, SiFirebase, 
 } from 'react-icons/si';
 
 export interface SkillCategory {
@@ -61,19 +61,8 @@ export const skillCategories: SkillCategory[] = [
         name: 'Tailwind CSS',
         icon: SiTailwindcss,
         color: '#06B6D4'
-      },
-      {
-        id: 'angular',
-        name: 'Angular',
-        icon: FaAngular,
-        color: '#DD0031'
-      },
-      {
-        id: 'vue',
-        name: 'Vue.js',
-        icon: FaVuejs,
-        color: '#4FC08D'
       }
+    
     ]
   },
   {
@@ -93,12 +82,6 @@ export const skillCategories: SkillCategory[] = [
         color: '#777BB4'
       },
       {
-        id: 'codeigniter',
-        name: 'CodeIgniter',
-        icon: SiCodeigniter,
-        color: '#EE4623'
-      },
-      {
         id: 'nodejs',
         name: 'Node.js',
         icon: FaNodeJs,
@@ -110,6 +93,24 @@ export const skillCategories: SkillCategory[] = [
         icon: FaPython,
         color: '#3776AB'
       },
+      {
+        id: 'firebase',
+        name: 'Firebase',
+        icon: SiFirebase,
+        color: '#FFCA28'
+      },
+      {
+        id: 'docker',
+        name: 'Docker',
+        icon: FaDocker,
+        color: '#2496ED'
+      }
+    ]
+  },
+  {
+    id: 'database',
+    title: 'Database Technologies',
+    skills: [
       {
         id: 'mongodb',
         name: 'MongoDB',
@@ -127,18 +128,6 @@ export const skillCategories: SkillCategory[] = [
         name: 'MySQL',
         icon: SiMysql,
         color: '#4479A1'
-      },
-      {
-        id: 'firebase',
-        name: 'Firebase',
-        icon: SiFirebase,
-        color: '#FFCA28'
-      },
-      {
-        id: 'docker',
-        name: 'Docker',
-        icon: FaDocker,
-        color: '#2496ED'
       }
     ]
   },

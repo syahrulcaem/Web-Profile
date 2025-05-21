@@ -39,10 +39,12 @@ const Navbar: React.FC = () => {
   
   return (
     <motion.header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md py-2`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md ${
+        scrolled ? 'py-3' : 'py-4'
+      }`}
       initial={{ y: 0 }}
       animate={{ 
-        y: hidden ? -100 : 0,
+        y: hidden ? -120 : 0, // Increased height for hiding
         opacity: hidden ? 0 : 1,
         boxShadow: scrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "none"
       }}
@@ -50,18 +52,18 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="text-xl font-bold text-gray-800">
+          {/* Logo - Increased size */}
+          <a href="#home" className="text-2xl md:text-3xl font-bold text-gray-800">
             Syahrul<span className="text-blue-500">.dev</span>
           </a>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Increased size and spacing */}
+          <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.path}
                 href={link.path}
-                className="text-gray-700 hover:text-blue-500 transition-colors"
+                className="text-lg text-gray-700 hover:text-blue-500 transition-colors font-medium"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector(link.path)?.scrollIntoView({
@@ -74,35 +76,35 @@ const Navbar: React.FC = () => {
             ))}
           </nav>
           
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Increased size */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none mr-1"
+            className="md:hidden text-gray-700 focus:outline-none p-2" // Added padding
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <FiX className="text-2xl" />
+              <FiX className="text-3xl" /> // Increased icon size
             ) : (
-              <FiMenu className="text-2xl" />
+              <FiMenu className="text-3xl" /> // Increased icon size
             )}
           </button>
         </div>
         
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Increased text size */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg py-4 md:hidden"
+              className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg py-5 md:hidden"
             >
-              <nav className="flex flex-col space-y-3 px-4">
+              <nav className="flex flex-col space-y-4 px-5">
                 {navLinks.map((link) => (
                   <a
                     key={link.path}
                     href={link.path}
-                    className="text-gray-700 hover:text-blue-500 transition-colors py-2"
+                    className="text-lg text-gray-700 hover:text-blue-500 transition-colors py-2 font-medium"
                     onClick={(e) => {
                       e.preventDefault();
                       document.querySelector(link.path)?.scrollIntoView({

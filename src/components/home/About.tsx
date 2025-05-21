@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import { FiUser, FiMail } from 'react-icons/fi';
-
+import { FiMail } from 'react-icons/fi';
 
 const About: React.FC = () => {
   return (
@@ -86,15 +85,6 @@ const About: React.FC = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <FiMail className="text-lg" /> Contact Me
-              </motion.button>
-              
-              {/* Outline Button */}
-              <motion.button
-                className="flex items-center gap-2 bg-transparent border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <FiUser className="text-lg" /> View Resume
               </motion.button>
             </div>
           </motion.div>
