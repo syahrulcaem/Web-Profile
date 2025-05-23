@@ -45,10 +45,12 @@ const Hero: React.FC = () => {
             
             {/* Custom Outline Button Implementation */}
             <motion.a 
-              href="https://drive.google.com/uc?export=download&id=1mRAYhuL-pywJjBrA6D3SJHGt8XSKoG0-" 
+              href="https://drive.google.com/uc?export=download&id=1IeauhVXLay_NOzQBkIu3VxSegBd8clWN" 
               className="flex items-center justify-center gap-2 bg-transparent border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-blue-50"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download CV <FiDownload />
             </motion.a>
