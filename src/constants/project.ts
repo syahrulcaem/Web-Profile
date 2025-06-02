@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: "Ignitor - Code Editor",
     description: "A lightweight, browser-based code editor with syntax highlighting, auto-completion, and live preview features designed specifically for web development.",
     image: "/images/projects/ignitor.jpeg",
-    link: "https://github.com/syahrulcaem/ignitor",
+    link: "https://ignitor.codewithwan.tech/",
     tags: ["JavaScript", "CodeMirror", "Monaco Editor", "PWA", "Browser API"]
   },
   {
