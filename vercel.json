@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
+  "installCommand": "bun install",
+  "buildCommand": "bun run build",
+  "devCommand": "bun run dev",
   "framework": "vite"
 }
