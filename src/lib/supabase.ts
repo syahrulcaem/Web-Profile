@@ -156,7 +156,7 @@ export async function getProjects(includeInactive = false): Promise<Project[]> {
   let query = supabase
     .from("projects")
     .select("*")
-    .order("order", { ascending: true });
+    .order("created_at", { ascending: false });
 
   if (!includeInactive) {
     query = query.eq("is_active", true);
@@ -242,7 +242,7 @@ export async function getSkillCategories(): Promise<
   const { data: skills, error: skillsError } = await supabase
     .from("skills")
     .select("*")
-    .order("order", { ascending: true });
+    .order("created_at", { ascending: false });
 
   if (skillsError) {
     console.error("Error fetching skills:", skillsError);
