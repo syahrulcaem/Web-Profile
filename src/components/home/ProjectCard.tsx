@@ -6,8 +6,8 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
-  link: string;
+  image_url?: string | null;
+  link?: string | null;
   tags?: string[];
 }
 
@@ -16,7 +16,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, image, link, tags } = project;
+  const { title, description, image_url, link, tags } = project;
 
   return (
     <motion.div 
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           transition={{ duration: 0.3 }}
         >
           <img
-            src={image}
+            src={image_url || 'https://via.placeholder.com/400x300'}
             alt={`${title} project`}
             className="object-cover w-full h-full"
             onError={(e) => {
@@ -66,12 +66,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         
         <p className="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
         
-        {/* Use custom button implementation if Button component still has issues */}
         <motion.button
           className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}
+          onClick={() => link && window.open(link, '_blank', 'noopener,noreferrer')}
         >
           View Project
         </motion.button>
