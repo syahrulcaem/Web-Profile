@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "";
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
+const supabaseUrl = import.meta.env['VITE_SUPABASE_URL'] as string || "";
+const supabaseAnonKey = import.meta.env['VITE_SUPABASE_ANON_KEY'] as string || "";
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn(
@@ -335,7 +335,7 @@ export async function deleteSkill(id: string) {
  * Upload an image to Supabase Storage
  */
 export async function uploadImage(bucket: string, path: string, file: File) {
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from(bucket)
     .upload(path, file, {
       cacheControl: "3600",
