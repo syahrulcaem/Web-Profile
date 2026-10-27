@@ -1,54 +1,188 @@
+
 import { Project } from '../components/home/ProjectCard';
 
-export const projects: Project[] = [
+type ProjectWithImage = Project & {
+  image: string;
+};
 
+export const projects: ProjectWithImage[] = [
   {
     id: "asave",
     title: "ASave - Budget App",
-    description: "Brutal budgeting app that helps users track expenses, save money, and achieve financial goals. Features expense tracking, visualization, and financial goal setting.",
-    image_url: "/images/projects/asave.png",
+    description:
+      "A budgeting application that helps users track expenses, manage savings, visualize financial data, and achieve financial goals.",
+    image: "/images/projects/asave.png",
     link: "https://www.asave.my.id/",
-    tags: ["React Native", "Mobile App", "Financial", "Expense Tracking", "Data Visualization"]
+    tags: [
+      "React Native",
+      "Mobile App",
+      "Financial",
+      "Expense Tracking",
+      "Data Visualization",
+    ],
   },
   {
     id: "selin-backend",
     title: "Polines Attendance System (SELIN)",
-    description: "A mobile application for Politeknik Negeri Semarang's student attendance system with face recognition technology to prevent attendance fraud.",
-    image_url: "/images/projects/selin.jpeg",
+    description:
+      "A student attendance system for Politeknik Negeri Semarang featuring face recognition technology to help prevent attendance fraud.",
+    image: "/images/projects/selin.jpeg",
     link: "https://github.com/syahrulcaem/selin-backend",
-    tags: ["Laravel", "MySQL", "Flutter", "Face Recognition", "Mobile App"]
+    tags: [
+      "Laravel",
+      "MySQL",
+      "Flutter",
+      "Face Recognition",
+      "Mobile App",
+    ],
   },
   {
     id: "aplikasi-ujian-online",
     title: "Online Exam Monitoring System",
-    description: "An online examination platform developed to prevent cheating during remote exams, featuring real-time monitoring and automated suspicious behavior detection.",
-    image_url: "/images/projects/monitoring.png",
+    description:
+      "An online examination platform designed to support exam integrity through monitoring and suspicious behavior detection.",
+    image: "/images/projects/monitoring.png",
     link: "https://github.com/syahrulcaem/aplikasi-ujian-online",
-    tags: ["Laravel", "React", "TypeScript", "MySQL", "REST API"]
+    tags: [
+      "Laravel",
+      "React",
+      "TypeScript",
+      "MySQL",
+      "REST API",
+    ],
   },
   {
     id: "ignitor",
     title: "Ignitor - Code Editor",
-    description: "A lightweight, browser-based code editor with syntax highlighting, auto-completion, and live preview features designed specifically for web development.",
-    image_url: "/images/projects/ignitor.jpeg",
+    description:
+      "A lightweight browser-based code editor featuring syntax highlighting, code completion, and live preview for web development.",
+    image: "/images/projects/ignitor.jpeg",
     link: "https://ignitor.codewithwan.tech/",
-    tags: ["JavaScript", "CodeMirror", "Monaco Editor", "PWA", "Browser API"]
+    tags: [
+      "JavaScript",
+      "CodeMirror",
+      "Monaco Editor",
+      "PWA",
+      "Browser API",
+    ],
   },
   {
     id: "hajifund",
     title: "HajiFund - Saving Platform",
-    description: "Financial platform designed to help Muslims save for their Hajj or Umrah pilgrimage, offering Sharia-compliant investment options and goal tracking.",
-    image_url: "/images/projects/hajifund.png",
+    description:
+      "A savings platform for Hajj and Umrah planning, featuring financial goal tracking and pilgrimage savings management.",
+    image: "/images/projects/hajifund.png",
     link: "https://github.com/syahrulcaem/hajifund",
-    tags: ["Next.js", "MongoDB", "Tailwind CSS", "Payment Gateway", "Authentication"]
-  },{
+    tags: [
+      "Next.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Payment Gateway",
+      "Authentication",
+    ],
+  },
+  {
     id: "anon-chat",
     title: "Anon Chat",
-    description: "Secure anonymous messaging platform with encrypted communication channels. Built with end-to-end encryption and zero chat history for maximum privacy and security.",
-    image_url: "/images/projects/anon.png",
+    description:
+      "An anonymous messaging platform designed to support private conversations with real-time messaging and privacy-focused features.",
+    image: "/images/projects/anon.png",
     link: "https://anon-chat-ten.vercel.app/",
-    tags: ["Next.js", "Firebase", "Encryption", "Real-time", "Authentication"]
-  }
+    tags: [
+      "Next.js",
+      "Firebase",
+      "Encryption",
+      "Real-time",
+      "Authentication",
+    ],
+  },
+  {
+    id: "libas",
+    title: "LIBAS - Public Reporting Application",
+    description:
+      "Developed and maintained a public reporting application under the supervision of Polrestabes Semarang, including application maintenance, bug fixes, and technical issue resolution.",
+    image: "/images/projects/libas.png",
+    link: "",
+    tags: [
+      "Laravel",
+      "PostgreSQL",
+      "Web Application",
+      "Application Maintenance",
+    ],
+  },
+  {
+    id: "fomi",
+    title: "FOMI - QR Ownership Identification System",
+    description:
+      "A QR code-based ownership identification system with product management, structured data management, and subscription-based services.",
+    image: "/images/projects/fomi.png",
+    link: "",
+    tags: [
+      "Laravel",
+      "QR Code",
+      "Database Management",
+      "Subscription System",
+    ],
+  },
+  {
+    id: "gbm-bangun-renovasi",
+    title: "GBM Bangun dan Renovasi",
+    description:
+      "A company profile website built with Next.js to showcase company information, construction and renovation services, and business offerings.",
+    image: "/images/projects/gbm.png",
+    link: "https://gbmbangundanrenovasi.com/",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Responsive Web Design",
+      "Company Profile",
+    ],
+  },
+  {
+    id: "phri",
+    title: "PHRI - Web Systems Development",
+    description:
+      "Developed backend systems for PHRI, covering the organization company profile website, career website, and SKKA hotel assessment system.",
+    image: "/images/projects/phri.png",
+    link: "",
+    tags: [
+      "Backend Development",
+      "PHP",
+      "MySQL",
+      "REST API",
+      "Web Application",
+    ],
+  },
+  {
+    id: "erp-asaba",
+    title: "ASABA - Enterprise Resource Planning",
+    description:
+      "Developed the backend of an ERP system for ASABA to support business operations, data processing, and integration between system features.",
+    image: "/images/projects/asaba.png",
+    link: "",
+    tags: [
+      "Backend Development",
+      "Laravel",
+      "PostgreSQL",
+      "ERP",
+      "Database Management",
+    ],
+  },
+  {
+    id: "savepoint",
+    title: "SavePoint - Emergency Response System",
+    description:
+      "A mobile and web application integrated with IoT technology to connect users with nearby emergency responders during emergency situations.",
+    image: "/images/projects/savepoint.png",
+    link: "",
+    tags: [
+      "Mobile App",
+      "Web Application",
+      "IoT",
+      "Emergency Response",
+    ],
+  },
 ];
 
 export default projects;
