@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import SkillItem from './SkillItem';
-import { skillCategories } from '../../constants/content';
+import { skillCategories } from '../../constants/skills';
 import { useLanguage } from '../../context/LanguageContext';
 
 const Skills: React.FC = () => {

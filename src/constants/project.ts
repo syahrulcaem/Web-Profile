@@ -5,7 +5,7 @@ type ProjectWithImage = Project & {
   image: string;
 };
 
-export const projects: ProjectWithImage[] = [
+const projectList: ProjectWithImage[] = [
   {
     id: "asave",
     title: "ASave - Budget App",
@@ -102,6 +102,11 @@ export const projects: ProjectWithImage[] = [
     description:
       "Developed and maintained a public reporting application under the supervision of Polrestabes Semarang, including application maintenance, bug fixes, and technical issue resolution.",
     image: "/images/projects/libas.png",
+    images: [
+      "/images/projects/libas.png",
+      "/images/projects/libas1.png",
+      "/images/projects/libas.png",
+    ],
     link: "",
     tags: [
       "Laravel",
@@ -179,5 +184,24 @@ export const projects: ProjectWithImage[] = [
     tags: ["Web Application", "Database Management", "System Development"],
   },
 ];
+
+const featuredProjectOrder = [
+  "libas",
+  "gbm-bangun-renovasi",
+  "phri",
+  "erp-asaba",
+  "sis",
+  "asave",
+  "safepoint",
+  "selin-backend",
+  "aplikasi-ujian-online",
+  "ignitor",
+  "hajifund",
+  "anon-chat",
+];
+
+export const projects = featuredProjectOrder.map(
+  (id) => projectList.find((project) => project.id === id),
+).filter((project): project is ProjectWithImage => project !== undefined);
 
 export default projects;

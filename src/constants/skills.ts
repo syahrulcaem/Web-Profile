@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa';
 import { 
   SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb,
-  SiPostgresql, SiMysql, SiFirebase, 
+  SiPostgresql, SiMysql, SiFirebase, SiGo, SiFlutter,
 } from 'react-icons/si';
 
 export interface SkillCategory {
@@ -94,6 +94,12 @@ export const skillCategories: SkillCategory[] = [
         color: '#3776AB'
       },
       {
+        id: 'go',
+        name: 'Go',
+        icon: SiGo,
+        color: '#00ADD8'
+      },
+      {
         id: 'firebase',
         name: 'Firebase',
         icon: SiFirebase,
@@ -104,6 +110,18 @@ export const skillCategories: SkillCategory[] = [
         name: 'Docker',
         icon: FaDocker,
         color: '#2496ED'
+      }
+    ]
+  },
+  {
+    id: 'mobile',
+    title: 'Mobile Development',
+    skills: [
+      {
+        id: 'flutter',
+        name: 'Flutter',
+        icon: SiFlutter,
+        color: '#02569B'
       }
     ]
   },

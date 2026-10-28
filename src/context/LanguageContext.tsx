@@ -17,6 +17,8 @@ type TranslationSet = {
     description: string;
     viewProjects: string;
     downloadCv: string;
+    available: string;
+    availabilityDescription: string;
   };
   sections: {
     about: string;
@@ -35,6 +37,12 @@ type TranslationSet = {
     noProjects: string;
     viewAll: string;
     viewProject: string;
+    viewDetails: string;
+    details: string;
+    closeDetails: string;
+    previousImage: string;
+    nextImage: string;
+    selectImage: string;
   };
   contact: {
     sendMessage: string;
@@ -64,6 +72,8 @@ const translations: Record<Language, TranslationSet> = {
       description: 'I build reliable web and mobile applications with a focus on useful experiences, maintainable code, and thoughtful design.',
       viewProjects: 'View Projects',
       downloadCv: 'Download CV',
+      available: 'Available for new projects',
+      availabilityDescription: 'Turning ideas into useful digital products.',
     },
     sections: { about: 'About Me', skills: 'My Skills', projects: 'My Projects', contact: 'Get In Touch' },
     about: {
@@ -75,7 +85,18 @@ const translations: Record<Language, TranslationSet> = {
       expertise: 'Expertise in:',
       contactMe: 'Contact Me',
     },
-    projects: { all: 'All', noProjects: 'No projects found', viewAll: 'View All Projects', viewProject: 'View Project' },
+    projects: {
+      all: 'All',
+      noProjects: 'No projects found',
+      viewAll: 'View All Projects',
+      viewProject: 'View Project',
+      viewDetails: 'View Details',
+      details: 'Project Details',
+      closeDetails: 'Close project details',
+      previousImage: 'Previous image',
+      nextImage: 'Next image',
+      selectImage: 'Select image',
+    },
     contact: {
       sendMessage: 'Send Me a Message',
       messageSent: 'Message Sent!',
@@ -98,6 +119,8 @@ const translations: Record<Language, TranslationSet> = {
       description: 'Saya membangun aplikasi web dan mobile yang andal dengan fokus pada pengalaman yang bermanfaat, kode yang mudah dirawat, dan desain yang matang.',
       viewProjects: 'Lihat Proyek',
       downloadCv: 'Unduh CV',
+      available: 'Terbuka untuk proyek baru',
+      availabilityDescription: 'Mengubah ide menjadi produk digital yang bermanfaat.',
     },
     sections: { about: 'Tentang Saya', skills: 'Keahlian Saya', projects: 'Proyek Saya', contact: 'Hubungi Saya' },
     about: {
@@ -109,7 +132,18 @@ const translations: Record<Language, TranslationSet> = {
       expertise: 'Keahlian:',
       contactMe: 'Hubungi Saya',
     },
-    projects: { all: 'Semua', noProjects: 'Proyek tidak ditemukan', viewAll: 'Lihat Semua Proyek', viewProject: 'Lihat Proyek' },
+    projects: {
+      all: 'Semua',
+      noProjects: 'Proyek tidak ditemukan',
+      viewAll: 'Lihat Semua Proyek',
+      viewProject: 'Lihat Proyek',
+      viewDetails: 'Lihat Selengkapnya',
+      details: 'Detail Proyek',
+      closeDetails: 'Tutup detail proyek',
+      previousImage: 'Foto sebelumnya',
+      nextImage: 'Foto berikutnya',
+      selectImage: 'Pilih foto',
+    },
     contact: {
       sendMessage: 'Kirim Pesan',
       messageSent: 'Pesan Terkirim!',
