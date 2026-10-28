@@ -1,29 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import ProjectCard from '../home/ProjectCard';
 import Button from '../common/Button';
-import { getProjects, Project } from '../../lib/supabase';
+import { projects } from '../../constants/project';
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<string | null>(null);
-  
-  useEffect(() => {
-    loadProjects();
-  }, []);
-
-  const loadProjects = async () => {
-    try {
-      const data = await getProjects(); // Only get active projects
-      setProjects(data);
-    } catch (error) {
-      console.error('Error loading projects:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   // Extract unique tags from all projects
   const allTags = Array.from(
@@ -34,16 +17,6 @@ const Projects: React.FC = () => {
   const filteredProjects = filter 
     ? projects.filter(project => project.tags?.includes(filter))
     : projects;
-
-  if (loading) {
-    return (
-      <section id="projects" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 flex justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="projects" className="py-20 bg-gray-50">

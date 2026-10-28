@@ -1,49 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { FiMail } from 'react-icons/fi';
-import { getAboutContent, AboutContent } from '../../lib/supabase';
+import { aboutContent } from '../../constants/content';
 
 const About: React.FC = () => {
-  const [content, setContent] = useState<AboutContent | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    loadContent();
-  }, []);
-
-  const loadContent = async () => {
-    try {
-      const data = await getAboutContent();
-      setContent(data);
-    } catch (error) {
-      console.error('Error loading about content:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <section id="about" className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6 flex justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
-        </div>
-      </section>
-    );
-  }
-
-  if (!content) {
-    return (
-      <section id="about" className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle title="About Me" className="mb-12" />
-          <p className="text-gray-600">Content not available</p>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -59,13 +20,9 @@ const About: React.FC = () => {
             className="relative rounded-xl overflow-hidden aspect-square max-w-md mx-auto md:mx-0"
           >
             <img
-              src={content.image_url || '/images/syahrul1.jpeg'}
+              src={aboutContent.image}
               alt="Profile"
               className="object-cover w-full h-full"
-              onError={(e) => {
-                e.currentTarget.src = "https://via.placeholder.com/800x300";
-                e.currentTarget.alt = "Profile Photo Placeholder";
-              }}
             />
           </motion.div>
           
@@ -77,35 +34,25 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              {content.subtitle}
+              {aboutContent.subtitle}
             </h3>
             
             <div className="space-y-4">
-              <p style={{ color: '#4B5563' }}>
-                {content.bio_paragraph_1}
-              </p>
-              
-              {content.bio_paragraph_2 && (
-                <p style={{ color: '#4B5563' }}>
-                  {content.bio_paragraph_2}
+              {aboutContent.paragraphs.map((paragraph) => (
+                <p key={paragraph} style={{ color: '#4B5563' }}>
+                  {paragraph}
                 </p>
-              )}
-              
-              {content.bio_paragraph_3 && (
-                <p style={{ color: '#4B5563' }}>
-                  {content.bio_paragraph_3}
-                </p>
-              )}
+              ))}
             </div>
             
             {/* Expertise Tags */}
-            {content.expertise && content.expertise.length > 0 && (
+            {aboutContent.expertise.length > 0 && (
               <div className="mt-6">
                 <h4 className="font-semibold text-gray-800 mb-2">Expertise in:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {content.expertise.map((skill, index) => (
+                  {aboutContent.expertise.map((skill) => (
                     <span 
-                      key={index}
+                      key={skill}
                       className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
                     >
                       {skill}

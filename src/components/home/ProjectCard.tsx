@@ -6,7 +6,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image_url?: string | null;
+  image: string;
   link?: string | null;
   tags?: string[];
 }
@@ -16,7 +16,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, image_url, link, tags } = project;
+  const { title, description, image, link, tags } = project;
 
   return (
     <motion.div 
@@ -35,13 +35,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           transition={{ duration: 0.3 }}
         >
           <img
-            src={image_url || 'https://via.placeholder.com/400x300'}
+            src={image}
             alt={`${title} project`}
             className="object-cover w-full h-full"
-            onError={(e) => {
-              e.currentTarget.src = "https://via.placeholder.com/400x300";
-              e.currentTarget.alt = "Project image placeholder";
-            }}
           />
         </motion.div>
       </div>

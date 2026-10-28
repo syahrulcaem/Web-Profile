@@ -11,16 +11,6 @@ import Projects from './components/home/Projects';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
 
-// Admin components
-import Login from './pages/admin/Login';
-import Dashboard from './pages/admin/Dashboard';
-import HeroManager from './pages/admin/HeroManager';
-import AboutManager from './pages/admin/AboutManager';
-import ProjectsManager from './pages/admin/ProjectsManager';
-import SkillsManager from './pages/admin/SkillsManager';
-import AdminLayout from './components/admin/Layout';
-import ProtectedRoute from './components/admin/ProtectedRoute';
-
 // Public Home Page
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,25 +51,6 @@ function App() {
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
 
-        {/* Admin Routes */}
-        <Route path="/admin/login" element={<Login />} />
-        
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="hero" element={<HeroManager />} />
-          <Route path="about" element={<AboutManager />} />
-          <Route path="projects" element={<ProjectsManager />} />
-          <Route path="skills" element={<SkillsManager />} />
-        </Route>
-
         {/* Catch all - redirect to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
@@ -88,4 +59,3 @@ function App() {
 }
 
 export default App;
-

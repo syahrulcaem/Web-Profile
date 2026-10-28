@@ -111,20 +111,6 @@ export const projects: ProjectWithImage[] = [
     ],
   },
   {
-    id: "fomi",
-    title: "FOMI - QR Ownership Identification System",
-    description:
-      "A QR code-based ownership identification system with product management, structured data management, and subscription-based services.",
-    image: "/images/projects/fomi.png",
-    link: "",
-    tags: [
-      "Laravel",
-      "QR Code",
-      "Database Management",
-      "Subscription System",
-    ],
-  },
-  {
     id: "gbm-bangun-renovasi",
     title: "GBM Bangun dan Renovasi",
     description:
@@ -170,11 +156,11 @@ export const projects: ProjectWithImage[] = [
     ],
   },
   {
-    id: "savepoint",
+    id: "safepoint",
     title: "SavePoint - Emergency Response System",
     description:
       "A mobile and web application integrated with IoT technology to connect users with nearby emergency responders during emergency situations.",
-    image: "/images/projects/savepoint.png",
+    image: "/images/projects/safepoint.png",
     link: "",
     tags: [
       "Mobile App",
@@ -182,6 +168,15 @@ export const projects: ProjectWithImage[] = [
       "IoT",
       "Emergency Response",
     ],
+  },
+  {
+    id: "sis",
+    title: "PT SIS - Information System",
+    description:
+      "A web-based information system designed to organize data, streamline workflows, and support day-to-day operations.",
+    image: "/images/projects/sis.png",
+    link: "",
+    tags: ["Web Application", "Database Management", "System Development"],
   },
 ];
 
