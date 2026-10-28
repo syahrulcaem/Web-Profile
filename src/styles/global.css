@@ -189,9 +189,9 @@ code, pre {
 /* Container utility */
 .container {
   width: 100%;
-  max-width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 1440px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Accessibility */
@@ -250,9 +250,8 @@ code, pre {
 /* Medium (md) */
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   html {

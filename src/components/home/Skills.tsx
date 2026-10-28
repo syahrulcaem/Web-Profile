@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import SkillItem from './SkillItem';
 import { skillCategories } from '../../constants/content';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Skills: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle title="My Skills" className="mb-12" />
+      <div className="container mx-auto">
+        <SectionTitle title={t.sections.skills} className="mb-12" />
         
         <div className="space-y-12">
           {skillCategories.map((category) => (

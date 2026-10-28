@@ -2,14 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
 import { heroContent } from '../../constants/content';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section 
       id="home"
       className="min-h-screen flex items-center bg-gray-50 py-20"
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -17,16 +19,16 @@ const Hero: React.FC = () => {
           className="max-w-3xl"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight">
-            Hello, I'm <br className="sm:hidden" />
+            {t.hero.greeting} <br className="sm:hidden" />
             <span className="text-blue-500 block sm:inline">{heroContent.name}</span>
           </h1>
           
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
-            {heroContent.title}
+            {t.hero.title}
           </h2>
           
           <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-            {heroContent.description}
+            {t.hero.description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -36,7 +38,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              View Projects <FiArrowRight />
+              {t.hero.viewProjects} <FiArrowRight />
             </motion.button>
             
             {heroContent.cvLink && (
@@ -48,7 +50,7 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download CV <FiDownload />
+                {t.hero.downloadCv} <FiDownload />
               </motion.a>
             )}
           </div>

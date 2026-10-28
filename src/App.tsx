@@ -10,6 +10,7 @@ import Skills from './components/home/Skills';
 import Projects from './components/home/Projects';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
+import { LanguageProvider } from './context/LanguageContext';
 
 // Public Home Page
 function HomePage() {
@@ -46,15 +47,14 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<HomePage />} />
-
-        {/* Catch all - redirect to home */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </LanguageProvider>
   );
 }
 

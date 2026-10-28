@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaCheckCircle } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface FormData {
   name: string;
@@ -39,6 +40,7 @@ const socialLinks = [
 ];
 
 const Contact: React.FC = () => {
+  const { language, t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
   
@@ -77,8 +79,8 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle title="Get In Touch" className="mb-12" />
+      <div className="container mx-auto">
+        <SectionTitle title={t.sections.contact} className="mb-12" />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
@@ -89,18 +91,18 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-xl p-6 shadow-md"
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">{t.contact.sendMessage}</h3>
             
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center text-center py-8">
                 <FaCheckCircle className="text-green-500 text-5xl mb-4" />
-                <h4 className="text-xl font-bold text-gray-800 mb-2">Message Sent!</h4>
-                <p className="text-gray-600 mb-6">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <h4 className="text-xl font-bold text-gray-800 mb-2">{t.contact.messageSent}</h4>
+                <p className="text-gray-600 mb-6">{t.contact.thankYou}</p>
                 <button 
                   onClick={() => setIsSubmitted(false)}
                   className="text-blue-500 hover:text-blue-700 font-medium"
                 >
-                  Send another message
+                  {t.contact.sendAnother}
                 </button>
               </div>
             ) : (
@@ -108,7 +110,7 @@ const Contact: React.FC = () => {
                 {/* Name Input */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Name
+                    {t.contact.name}
                   </label>
                   <input
                     id="name"
@@ -118,8 +120,8 @@ const Contact: React.FC = () => {
                     }`}
                     placeholder="John Doe"
                     {...register('name', { 
-                      required: 'Name is required',
-                      minLength: { value: 2, message: 'Name must be at least 2 characters' }
+                      required: language === 'id' ? 'Nama wajib diisi' : 'Name is required',
+                      minLength: { value: 2, message: language === 'id' ? 'Nama minimal 2 karakter' : 'Name must be at least 2 characters' }
                     })}
                   />
                   {errors.name && (
@@ -130,7 +132,7 @@ const Contact: React.FC = () => {
                 {/* Email Input */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Email
+                    {t.contact.email}
                   </label>
                   <input
                     id="email"
@@ -140,10 +142,10 @@ const Contact: React.FC = () => {
                     }`}
                     placeholder="john@example.com"
                     {...register('email', { 
-                      required: 'Email is required',
+                      required: language === 'id' ? 'Email wajib diisi' : 'Email is required',
                       pattern: { 
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'Invalid email address'
+                        message: language === 'id' ? 'Alamat email tidak valid' : 'Invalid email address'
                       }
                     })}
                   />
@@ -155,7 +157,7 @@ const Contact: React.FC = () => {
                 {/* Subject Input */}
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                    Subject
+                    {t.contact.subject}
                   </label>
                   <input
                     id="subject"
@@ -165,8 +167,8 @@ const Contact: React.FC = () => {
                     }`}
                     placeholder="Project Inquiry"
                     {...register('subject', { 
-                      required: 'Subject is required',
-                      minLength: { value: 5, message: 'Subject must be at least 5 characters' }
+                      required: language === 'id' ? 'Subjek wajib diisi' : 'Subject is required',
+                      minLength: { value: 5, message: language === 'id' ? 'Subjek minimal 5 karakter' : 'Subject must be at least 5 characters' }
                     })}
                   />
                   {errors.subject && (
@@ -177,7 +179,7 @@ const Contact: React.FC = () => {
                 {/* Message Input */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
+                    {t.contact.message}
                   </label>
                   <textarea
                     id="message"
@@ -187,8 +189,8 @@ const Contact: React.FC = () => {
                     }`}
                     placeholder="Your message..."
                     {...register('message', { 
-                      required: 'Message is required',
-                      minLength: { value: 10, message: 'Message must be at least 10 characters' }
+                      required: language === 'id' ? 'Pesan wajib diisi' : 'Message is required',
+                      minLength: { value: 10, message: language === 'id' ? 'Pesan minimal 10 karakter' : 'Message must be at least 10 characters' }
                     })}
                   />
                   {errors.message && (
@@ -211,7 +213,7 @@ const Contact: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t.contact.sending : t.contact.send}
                 </motion.button>
               </form>
             )}

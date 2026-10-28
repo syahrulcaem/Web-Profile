@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { FiMail } from 'react-icons/fi';
 import { aboutContent } from '../../constants/content';
+import { useLanguage } from '../../context/LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle title="About Me" className="mb-12" />
+      <div className="container mx-auto">
+        <SectionTitle title={t.sections.about} className="mb-12" />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Profile Image */}
@@ -34,11 +36,11 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              {aboutContent.subtitle}
+              {t.about.subtitle}
             </h3>
             
             <div className="space-y-4">
-              {aboutContent.paragraphs.map((paragraph) => (
+              {t.about.paragraphs.map((paragraph) => (
                 <p key={paragraph} style={{ color: '#4B5563' }}>
                   {paragraph}
                 </p>
@@ -48,7 +50,7 @@ const About: React.FC = () => {
             {/* Expertise Tags */}
             {aboutContent.expertise.length > 0 && (
               <div className="mt-6">
-                <h4 className="font-semibold text-gray-800 mb-2">Expertise in:</h4>
+                <h4 className="font-semibold text-gray-800 mb-2">{t.about.expertise}</h4>
                 <div className="flex flex-wrap gap-2">
                   {aboutContent.expertise.map((skill) => (
                     <span 
@@ -70,7 +72,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FiMail className="text-lg" /> Contact Me
+                <FiMail className="text-lg" /> {t.about.contactMe}
               </motion.button>
             </div>
           </motion.div>

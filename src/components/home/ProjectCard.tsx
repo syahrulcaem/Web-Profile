@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../context/LanguageContext';
 
 
 export interface Project {
@@ -16,6 +17,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const { t } = useLanguage();
   const { title, description, image, link, tags } = project;
 
   return (
@@ -68,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           whileTap={{ scale: 0.98 }}
           onClick={() => link && window.open(link, '_blank', 'noopener,noreferrer')}
         >
-          View Project
+          {t.projects.viewProject}
         </motion.button>
       </div>
     </motion.div>

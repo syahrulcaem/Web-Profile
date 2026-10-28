@@ -4,8 +4,10 @@ import SectionTitle from '../common/SectionTitle';
 import ProjectCard from '../home/ProjectCard';
 import Button from '../common/Button';
 import { projects } from '../../constants/project';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Projects: React.FC = () => {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState<string | null>(null);
 
   // Extract unique tags from all projects
@@ -20,8 +22,8 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle title="My Projects" className="mb-12" />
+      <div className="container mx-auto">
+        <SectionTitle title={t.sections.projects} className="mb-12" />
         
         {/* Filter Buttons */}
         {allTags.length > 0 && (
@@ -30,7 +32,7 @@ const Projects: React.FC = () => {
               variant={filter === null ? "primary" : "default"}
               onClick={() => setFilter(null)}
             >
-              All
+              {t.projects.all}
             </Button>
             
             {allTags.map(tag => (
@@ -58,14 +60,14 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {filteredProjects.length === 0 && (
-          <p className="text-center text-gray-600 py-12">No projects found</p>
+          <p className="text-center text-gray-600 py-12">{t.projects.noProjects}</p>
         )}
         
         {/* "View More" Button */}
         {projects.length > 4 && (
           <div className="mt-12 text-center">
             <Button variant="outline">
-              View All Projects
+              {t.projects.viewAll}
             </Button>
           </div>
         )}
