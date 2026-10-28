@@ -1,0 +1,125 @@
+{
+  "planHash": "329b9a4537d078829c4deb74e00631df79d62c3024081fe596f4ae0294eef93a",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-10-28T02:48:07.3013562Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 0,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E web-porto@0.0.0 build\r\n\u003E tsc -b \u0026\u0026 vite build\r\n\r\n\u001B[36mvite v6.3.5 \u001B[32mbuilding for production...\u001B[36m\u001B[39m\r\ntransforming...\r\nBrowserslist: browsers data (caniuse-lite) is 17 months old. Please run:\r\n  npx update-browserslist-db@latest\r\n  Why you should do it regularly: https://github.com/browserslist/update-db#readme\r\n\u001B[32m\u2713\u001B[39m 445 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\n\u001B[2mdist/\u001B[22m\u001B[32mindex.html                 \u001B[39m\u001B[1m\u001B[2m  0.75 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   0.42 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/index-Cc0vUq-v.css  \u001B[39m\u001B[1m\u001B[2m 20.85 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   4.87 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/index-BGV4Vfce.js   \u001B[39m\u001B[1m\u001B[2m433.02 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 143.31 kB\u001B[22m\r\n\u001B[32m\u2713 built in 10.52s\u001B[39m\r\n",
+        "durationMs": 13536
+      },
+      {
+        "name": "lint-pass",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E web-porto@0.0.0 lint\r\n\u003E eslint .\r\n\r\n",
+        "durationMs": 6350
+      },
+      {
+        "name": "home-route-200",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n    \u003Clink rel=\u0022icon\u0022 type=\u0022image/png\u0022 href=\u0022/favicon.png\u0022 /\u003E\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n    \u003Ctitle\u003EM. Syahrul Romadhon | Portfolio\u003C/title\u003E\n    \u003Cmeta name=\u0022description\u0022 content=\u0022Informatics Engineering Student passionate about Web Development \u0026 Cybersecurity\u0022 /\u003E\n    \u003Cmeta name=\u0022keywords\u0022 content=\u0022web development, cybersecurity, laravel, react, portfolio\u0022 /\u003E\n    \u003Cmeta name=\u0022author\u0022 content=\u0022M. Syahrul Romadhon\u0022 /\u003E\n  \u003C/head\u003E\n  \u003Cbody\u003E\n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/index.tsx\u0022\u003E\u003C/script\u003E\n  \u003C/body\u003E\n\u003C/html\u003E\n\n--- server output ---\n\r\n\u003E web-porto@0.0.0 dev\r\n\u003E vite --host 127.0.0.1\r\n\r\n\u001B[2m09.47.51\u001B[22m \u001B[36m\u001B[1m[vite]\u001B[22m\u001B[39m \u001B[90m\u001B[2m(client)\u001B[22m\u001B[39m Re-optimizing dependencies because lockfile has changed\r\n\r\n  \u001B[32m\u001B[1mVITE\u001B[22m v6.3.5\u001B[39m  \u001B[2mready in \u001B[0m\u001B[1m785\u001B[22m\u001B[2m\u001B[0m ms\u001B[22m\r\n\r\n  \u001B[32m\u279C\u001B[39m  \u001B[1mLocal\u001B[22m:   \u001B[36mhttp://127.0.0.1:\u001B[1m5173\u001B[22m/\u001B[39m\r\n",
+        "durationMs": 3322
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E web-porto@0.0.0 build\r\n\u003E tsc -b \u0026\u0026 vite build\r\n\r\n\u001B[36mvite v6.3.5 \u001B[32mbuilding for production...\u001B[36m\u001B[39m\r\ntransforming...\r\nBrowserslist: browsers data (caniuse-lite) is 17 months old. Please run:\r\n  npx update-browserslist-db@latest\r\n  Why you should do it regularly: https://github.com/browserslist/update-db#readme\r\n\u001B[32m\u2713\u001B[39m 445 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\n\u001B[2mdist/\u001B[22m\u001B[32mindex.html                 \u001B[39m\u001B[1m\u001B[2m  0.75 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   0.42 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/index-Cc0vUq-v.css  \u001B[39m\u001B[1m\u001B[2m 20.85 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   4.87 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/index-BGV4Vfce.js   \u001B[39m\u001B[1m\u001B[2m433.02 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip: 143.31 kB\u001B[22m\r\n\u001B[32m\u2713 built in 10.83s\u001B[39m\r\n",
+        "durationMs": 13916,
+        "testResults": {
+          "testFramework": "unknown",
+          "runnerDetectedFrom": "none",
+          "testsTotal": 0,
+          "testsPassed": 0,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": true
+        }
+      }
+    ],
+    "executions": [
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\laragon\\bin\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "D:\\web-porto",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "lint-pass",
+        "resolvedExecutable": "C:\\laragon\\bin\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "lint"
+        ],
+        "cwd": "D:\\web-porto",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "home-route-200",
+        "resolvedExecutable": "C:\\laragon\\bin\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "D:\\web-porto",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\laragon\\bin\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "D:\\web-porto",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}
