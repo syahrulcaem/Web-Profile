@@ -16,7 +16,7 @@ export const heroContent = {
   description:
     'I build reliable web and mobile applications with a focus on useful experiences, maintainable code, and thoughtful design.',
   cvLink: '/CV/Cv.pdf',
-  email: 'syahrulcaem@gmail.com',
+  email: 'syahrulromadhonmuhammad@gmail.com',
   linkedinUrl: 'https://www.linkedin.com/in/m-syahrul-romadhon-73238128a/',
   githubUrl: 'https://github.com/syahrulcaem',
 };
